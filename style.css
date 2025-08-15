@@ -56,12 +56,20 @@ h2 {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
-.card {
+.card1 {
     padding: 1rem;
-    background: var(--card);
+    width: 270px;/* 指定寬度 */
+    height: 450px;/* 指定高度，可選 */
+    background: lightcoral;
     border-radius: 12px;
 }
 
+.card2{
+    padding: 1rem;
+    width: 600px;
+    height: 430px;
+    background: lightsteelblue;
+    border-radius: 12px;
 button {
     padding: 0.6rem 1rem;
     border: 0;
