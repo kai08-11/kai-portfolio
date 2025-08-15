@@ -10,8 +10,5 @@ greetBtn.addEventListener("click", () => {
     greetMsg.textContent = `第 ${count} 次按下：嗨，很高興認識你！`;
 });
 
-// 主題切換（亮/暗）
-const themeToggle = document.getElementById("themeToggle");
-themeToggle.addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
-});
+
+
