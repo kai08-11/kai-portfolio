@@ -1,0 +1,80 @@
+:root {
+    --bg: #ffffff;
+    --fg: #222222;
+    --card: #f3f3f3;
+}
+
+.dark {
+    --bg: #0f172a;
+    --fg: #e5e7eb;
+    --card: #1f2937;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+header nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.8;
+}
+
+header nav a:hover {
+    opacity: 1;
+}
+
+h1,
+h2 {
+    margin: 0.6rem 0;
+}
+
+.cards {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.card {
+    padding: 1rem;
+    background: var(--card);
+    border-radius: 12px;
+}
+
+button {
+    padding: 0.6rem 1rem;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    margin-left: auto;
+}
