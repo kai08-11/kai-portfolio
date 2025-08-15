@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我的自我介紹</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="container">
+        <h1>嗨，我是 Minkai</h1>
+        <p>這是我的個人介紹網站（正在練習中 🙌）</p>
+        <nav>
+            <a href="#about">關於我</a>
+            <a href="#works">作品集</a>
+            <a href="#contact">聯絡</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>關於我</h2>
+            <p>寫一段 2–3 句的自我介紹：你是誰、擅長什麼、目前在做什麼。</p>
+            <button id="greetBtn">跟我打招呼</button>
+            <p id="greetMsg" aria-live="polite"></p>
+        </section>
+
+        <section id="works">
+            <h2>作品集</h2>
+            <ul class="cards">
+                <li class="card">（未來可以放一張圖 + 簡介）</li>
+                <li class="card">（或連結到你的 GitHub / Medium）</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>聯絡我</h2>
+            <p>Email：<a href="mailto:you@example.com">you@example.com</a></p>
+        </section>
+    </main>
+
+    <footer class="container">
+        <small>© <span id="year"></span> Minkai</small>
+        <button id="themeToggle" class="right">切換主題</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
