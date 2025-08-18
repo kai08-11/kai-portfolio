@@ -1,178 +1,181 @@
-/* ============================= */
-/* 全域 CSS 變數設定 */
+/* ========== 全域變數 (顏色) ========== */
 :root {
     --bg: #ffffff;
-    /* 網頁背景色 */
     --fg: #222222;
-    /* 文字顏色 */
     --card: #f3f3f3;
-    /* 卡片背景色 */
+    --accent: #4f46e5;
 }
 
-/* 深色模式變數 */
 .dark {
     --bg: #0f172a;
     --fg: #e5e7eb;
     --card: #1f2937;
+    --accent: #38bdf8;
 }
 
-/* ============================= */
-/* 全域設定 */
+/* ========== 全域設定 ========== */
 * {
     box-sizing: border-box;
-    /* 包含 padding & border 在元素總寬度內 */
 }
 
 body {
     margin: 0;
-    /* 去掉預設外邊距 */
     font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
-    /* 設定字型 */
     background: var(--bg);
-    /* 背景色 */
     color: var(--fg);
-    /* 文字顏色 */
     line-height: 1.7;
-    /* 行高 */
 }
 
-/* ============================= */
-/* 容器 */
+/* 容器：限制內容寬度 */
 .container {
     max-width: 900px;
-    /* 最大寬度 */
     margin: 0 auto;
-    /* 水平置中 */
     padding: 1.5rem;
-    /* 內距 */
 }
 
-/* ============================= */
-/* Header 樣式 */
+/* ========== Header ========== */
 header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    /* 下方細邊框 */
-    padding-bottom: 1rem;
-    /* 底部內距 */
 }
 
-/* Header 內 h1 與圖片水平排列 */
+/* 標題 + 頭像水平排列 */
 .header-top {
     display: flex;
-    /* 水平排列 */
     align-items: center;
-    /* 垂直置中 */
-    gap: 20px;
-    /* 標題與圖片間距 */
+    justify-content: space-between;
+    /* 左右對齊 */
+    gap: 1rem;
 }
 
-/* Header 標題文字大小 */
-.header-top h1 {
+header h1 {
+    margin: 0;
     font-size: 2rem;
 }
 
-/* Header 導覽連結 */
-header nav a {
-    margin-right: 1rem;
-    /* 右間距 */
-    text-decoration: none;
-    /* 移除底線 */
-    color: inherit;
-    /* 繼承文字顏色 */
-    opacity: 0.8;
-    /* 半透明 */
-}
-
-header nav a:hover {
-    opacity: 1;
-    /* 滑鼠經過變完全不透明 */
-}
-
-/* ============================= */
-/* 圓形圖片卡片 */
-.card1 {
+/* 頭像卡片 */
+.card0 {
     width: 120px;
-    /* 卡片寬度 */
     height: 120px;
-    /* 卡片高度 */
     border-radius: 50%;
     /* 圓形 */
     overflow: hidden;
-    /* 超出部分裁切 */
-    background-color: lightcoral;
-    /* 卡片底色 */
+    background: var(--card);
     display: flex;
-    /* 內部用 flex 排版 */
-    justify-content: center;
-    /* 水平置中 */
     align-items: center;
-    /* 垂直置中 */
+    justify-content: center;
 }
 
-.card1 img {
+.card0 img {
     width: 100%;
-    /* 寬度填滿卡片 */
     height: 100%;
-    /* 高度填滿卡片 */
     object-fit: cover;
-    /* 保持比例並裁切超出部分 */
 }
 
-/* ============================= */
-/* 卡片列表 */
-.cards {
-    list-style: none;
-    /* 移除列表圓點 */
+/* 導覽列 */
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* ========== 區塊標題 ========== */
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+/* ========== 興趣 Cards ========== */
+#fun ul {
+    list-style-type: none;
+    /* 移除前面的點 */
     padding: 0;
-    /* 內距歸零 */
-    display: grid;
-    /* 使用 grid 排版 */
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    /* 卡片間距 */
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    /* 自動填滿欄位 */
 }
 
-/* 文字卡片 */
-.card2 {
-    padding: 1rem;
-    /* 內距 */
-    width: 600px;
-    /* 卡片寬度 */
-    height: 430px;
-    /* 卡片高度 */
-    background: lightsteelblue;
-    /* 卡片背景色 */
+#fun li {
+    flex: 1;
+    min-width: 220px;
+    background: var(--card);
     border-radius: 12px;
-    /* 圓角 */
+    padding: 1rem;
+    transition: transform 0.2s ease;
 }
 
-/* ============================= */
-/* 按鈕樣式 */
+#fun li:hover {
+    transform: translateY(-5px);
+}
+
+#fun h3 {
+    margin-top: 0;
+}
+
+/* ========== 學經歷 (下拉顯示內容) ========== */
+#experienceSelect {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+/* 預設隱藏 */
+.exp-detail {
+    display: none;
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+/* 顯示用 class */
+.exp-detail.active {
+    display: block;
+}
+
+/* 只針對 class="no-underline" 的 a 移除底線 */
+a.no-underline {
+    text-decoration: none;
+}
+
+/* ========== 按鈕 ========== */
 button {
     padding: 0.6rem 1rem;
-    /* 內距 */
     border: 0;
-    /* 移除邊框 */
     border-radius: 10px;
-    /* 圓角 */
     cursor: pointer;
-    /* 滑鼠變手形 */
+    background: var(--accent);
+    color: white;
+    font-size: 1rem;
+    transition: background 0.2s ease;
 }
 
-/* ============================= */
-/* Footer */
-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    /* 上邊框 */
-    display: flex;
-    /* 使用 flex 排版 */
-    align-items: center;
-    /* 垂直置中 */
+button:hover {
+    background: #4338ca;
 }
 
-/* 右側元素靠右 */
 .right {
     margin-left: auto;
-    /* 自動填充左側空間，靠右對齊 */
+}
+
+/* ========== Footer ========== */
+footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
 }

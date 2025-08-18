@@ -12,17 +12,17 @@
     <header class="container">
         <!-- 標題與圖片水平排列的容器 -->
         <div class="header-top">
-            <h1>嗨，我是旻凱阿呆</h1>
-            <div class="card1">
+            <h1>嗨，我是旻凱</h1>
+            <div class="card0">
                 <img src="img/嚕嚕米.png" alt="我的照片">
             </div>
         </div>
     
         <!-- 其他垂直排列元素 -->
-        <p>這是我的個人介紹網站（正在練習中 🙌）</p>
         <nav>
             <a href="#about">關於我</a>
             <a href="#fun">興趣</a>
+            <a href="#experience">學經歷</a>
             <a href="#contact">聯絡</a>
         </nav>
     </header>
@@ -37,34 +37,65 @@
             開發環境我用過 Anaconda3，不過電腦跑模型有點吃力，所以後來都用 Google Colab。平常會用到的套件像 Numpy、Pandas、Matplotlib、Scikit-learn、TensorFlow、PyTorch
             這些都有碰過，不過很多也還在熟悉與學習，很多時候都是邊做邊學，自己摸索，努力把東西做出，近期也會盡快學會架設網站，熟悉這些不同的程式語言。
             </p>
-            <p>我愛上班!</p>
-            <p>上班愛我!</p>
-            </p>
             <button id="greetBtn">跟我打招呼</button>
             <p id="greetMsg" aria-live="polite"></p>
         </section>
-
+<!--興趣-->
         <section id="fun">
             <h2>興趣</h2>
-            <ul class="cards">
+            <ul>
                 <li class="card1">
-                    <img src="img\嚕嚕米.png" alt="我的照片" width="250">
+                    <h3>山</h3>
+                    <p>爸爸為了鍛鍊我的體力</p>
+                    <p>我幼稚園還沒畢業就走完台北市20條親子步道</p>
+                    <p>媽媽以前是登山隊假日時常跟朋友出去爬山</p>
+                    <p>我喜歡跟著走去</p>
+                    <p>因為下山可以吃好吃的</p>
+                    <p>也曾爬過幾座百岳，想找機會再到山裡玩玩</p>
                 </li>
                 <li class="card2">
-                    <p>平時喜歡到戶外走走，接觸大自然，</p>
-                    <p>無論是爬山、潛水都可以，四處看看不同的風景，</p>
-                    <p>沒事在家也會看看電影、追劇</p>
-                    <p>（這種炎熱的夏天，真的會不想出門）</p>
-                    <p>期待未來能與大家多多交流~</p>
-                    <p>請多多指教，謝謝!</p>
+                    <h3>海</h3>
+                    <p>爸爸為了鍛鍊我的體力</p>
+                    <p>幼稚園大班就把我抓去游泳</p>
+                    <p>本來覺得很累，後來越游越有興趣</p>
+                    <p>專長是蛙式，小學在全國賽也有拿下不錯的名次</p>
+                    <p>後來就沒有繼續了</p>
+                    <p>大學有參與自由淺水社</p>
+                    <p>去潛過過琉球嶼綠島</p>
+                    <p>還想去蘭嶼~~</p>
                 </li>
             </ul>
         </section>
-
+<!--學經歷-->
+    <!--此搭配下拉選單-->
+        <section id="experience">
+            <h2>學經歷</h2>
+        
+            <!-- 下拉選單 -->
+            <select id="experienceSelect">
+                <option value="">請選擇</option>
+                <option value="thcu">東海資工</option>
+                <option value="coach">朝馬教練</option>
+            </select>
+        
+            <!-- 內容區 -->
+            <div id="experienceContent">
+                <div id="thcu" class="exp-detail">
+                    <h3>東海資工</h3>
+                    <p>不好玩</p>
+                </div>
+                <div id="coach" class="exp-detail">
+                    <h3>朝馬教練</h3>
+                    <p>好累</p>
+                </div>
+            </div>
+        </section>
+<!--聯絡我-->
         <section id="contact">
             <h2>聯絡我</h2>
             <p>Email：<a href="mailto:kai@jet-link.com.tw">kai@jet-link.com.tw</a>
             </p>
+            <p>LINE ID : kai910120 <a href="img/lineQRcode.jpg" target="_blank" class="no-underline">🖼️</a></p>
         </section>
     </main>
 
