@@ -1,10 +1,3 @@
-// ==========================
-// 動態年份顯示
-// ==========================
-document.getElementById("year").textContent = new Date().getFullYear();
-
-
-// ==========================
 // 打招呼互動 (❤️增加)
 // ==========================
 const greetBtn = document.getElementById("greetBtn"); // 取得按鈕
@@ -14,9 +7,10 @@ let count = 0; // 按鈕按下次數
 greetBtn.addEventListener("click", () => {
     count++; // 每按一次加 1
 
-    if (count > 30) {
+    if (count > 10) {
         // 第31次以後顯示爆表訊息
         greetMsg.textContent = "❤️❤️爆表了!❤️❤️";
+        greetMsg.style.color = "white"; // 設定文字顏色為白色
     } else {
         // 計算要顯示多少個❤️（每10次循環一次）
         let hearts = count % 10;
@@ -27,8 +21,29 @@ greetBtn.addEventListener("click", () => {
     console.log(`按下次數: ${count}, 顯示文字: ${greetMsg.textContent}`);
 });
 
+// 取得按鈕與彈出視窗元素
+const lineQRBtn = document.getElementById("lineQRBtn");
+const popup = document.getElementById("popup");
+const closeBtn = document.querySelector(".close-btn");
 
-// ==========================
+// 點擊按鈕時顯示彈出視窗
+lineQRBtn.addEventListener("click", (e) => {
+    e.preventDefault(); // 防止預設行為
+    popup.style.display = "flex"; // 顯示彈出視窗
+});
+
+// 點擊關閉按鈕時隱藏彈出視窗
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+});
+
+// 點擊彈出視窗背景時隱藏視窗
+popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});
+
 // 學經歷下拉選單互動
 // ==========================
 const select = document.getElementById("experienceSelect"); // 取得下拉選單
