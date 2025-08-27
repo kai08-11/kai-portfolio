@@ -1,0 +1,609 @@
+/* 全域設定 */
+* {
+    font-family: "Huninn",Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 40px;
+    /* 導覽列高度 */
+    scroll-behavior: smooth;
+    /* 順暢滾動 */
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff00;
+    /* 預設背景色 */
+}
+@font-face {
+    font-family:"Huninn" ;
+    src: url(./font/Huninn-Regular.ttf);
+}
+
+/* 背景：置中且貼齊上方；內容：水平＋垂直置中 */
+/* header 外框要有 relative，方便 nav 定位 */
+header {
+    position: relative;
+    min-height: 50vh;
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    background-image: url("img/hbg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    border-bottom: 5px solid rgb(255, 255, 255); /* 底線 */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(65, 65, 65, 0.473);
+    /* 半透明黑遮罩 */
+}
+
+/* 內容容器：讓文字與頭像左右排列 */
+.header-content {
+
+    display: flex;
+    /* 關鍵：讓子元素變成一排 */
+    flex-direction: row;
+    /* 左右排列 */
+    align-items: center;
+    /* 垂直置中對齊 */
+    gap: 20px;
+    /* 文字與頭像的間距 */
+    position: relative;
+        /* 確保內容在遮罩之上 */
+    z-index: 1;
+}
+
+/* 文字本身 */
+.header-txt {
+    font-family: "Huninn",sans-serif;
+    color: #fff8e9d0;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: 15px;
+    text-align: left;
+    /* 避免被其他置中樣式影響 */
+    white-space: nowrap;
+    /* 避免自動換行把佈局擠掉 */
+}
+
+/* 頭像外框：固定尺寸 + 圓形 + 置中裁切 */
+.header-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffe5a7;
+    flex-shrink: 0;
+    /* 避免被擠壓變形 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 圖片：鋪滿容器並保持比例 */
+.header-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ========== 導覽列 ========== */
+/* nav：和 header 一樣 80% 寬度，靠左 */
+/* 初始導覽列樣式 */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* 確保不被其他元素蓋掉 */
+    width: 100%;
+    margin:0 auto;
+    text-align: left;
+    background-color: rgba(194, 108, 58, 0.26);
+    /* 半透明背景 */
+    backdrop-filter: blur(10px);
+    /* 背景模糊效果 */
+    -webkit-backdrop-filter: blur(10px);
+    /* 支援 Safari */
+}
+
+nav .container1 {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    /* flex方便垂直置中 */
+    align-items: center;
+        /* 文字垂直置中 */
+    min-height: 30px;
+    /* 最小高度 */
+    max-height: 30px;
+    /* 最大高度 */
+}
+/* nav 裡的連結樣式 */
+nav a {
+    font-size: 18px;
+    margin-right: 1rem;
+    text-decoration: none;
+    color: hsl(143, 26%, 53%);
+    opacity: 0.85;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #b34a82;
+    /* hover 顏色 */
+}
+
+
+
+main.container2  {
+    width: 100%;
+    margin: 0 auto;
+    /* 左右置中 */
+    text-align: left;
+    /* 內容靠左 */
+    padding: 0;
+    background-color:rgba(255, 231, 196, 0.589)
+    /* 上下留一點空間 */
+}
+
+main.container2 #about {
+    width: 100%;
+    border-radius: 0;
+    background-image:
+    linear-gradient(rgba(255, 228, 206, 0.932), 
+    rgba(95, 67, 40, 0.6),
+    rgba(0, 0, 0, 0.692)),
+    /* 透明遮罩 */
+    url("img/東海教堂.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    min-height: 900px;
+
+    /* Flexbox */
+    display: flex;
+    justify-content: center;
+    /* 水平置中 */
+    align-items: center;
+    /* 垂直置中 */
+    text-align: center;
+    /* 文字置中 */
+    flex-direction: column;
+    /* 如果有多個元素垂直排列 */
+    /*底線*/
+    border-bottom: 5px solid rgb(17, 0, 255);
+    
+}
+.about-h-p {
+    width: 50%;
+    /* 讓內容區域寬度為 100% */
+    margin: auto;
+    /* 左右置中 */
+    padding: 0px;
+    /* 上下左右留點空間 */
+    text-align: left;
+    /* 文字置左 */
+}
+.about-h-p h2 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: hsl(0, 0%, 100%);
+    /* 標題下方留點空間 */
+}
+h2{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: hsla(24, 100%, 18%, 0.712);
+    /* 標題下方留點空間 */
+}
+
+#about {
+    width: 100%;
+    /* 每個區塊的內邊距 */
+    margin: 0 auto;
+    /* 每個區塊的外邊距 */
+    background-color: #a3633d36;
+    /* 區塊背景色 */
+
+}
+
+.abouttxt {
+    font-size: 20px;
+        line-height: 2;
+        color: #ffffff;
+        /*background-color: #dbd09e94;*/
+        /* 文字顏色 */
+        padding: 10px 10px;
+        border-radius: 10px;
+        margin-bottom: 10px
+}
+
+#greetBtn {
+    background-color: #9adde7d2;
+    /* 按鈕背景色 */
+    color: rgb(0, 0, 0);
+    /* 按鈕文字顏色 */
+    font-size: 16px;
+    /* 文字大小 */
+    font-weight: 450;
+    /* 文字加粗 */
+    padding: 5px 10px;
+    /* 按鈕內邊距 */
+    border: none;
+    /* 移除邊框 */
+    border-radius: 5px;
+    /* 圓角 */
+    cursor: pointer;
+    /* 滑鼠移到按鈕上時顯示手型 */
+    box-shadow: 0 4px 6px rgba(216, 14, 14, 0.1);
+    /* 添加陰影 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* 添加過渡效果 */
+}
+
+#greetBtn:hover {
+    background-color: #004585;
+    /* 滑鼠懸停時的背景色 */
+    transform: scale(1.05);
+    /* 滑鼠懸停時放大效果 */
+    color: rgb(204, 204, 204);
+}
+
+#greetBtn:active {
+    background-color: #004585;
+    /* 按下時的背景色 */
+    transform: scale(0.95);
+    /* 按下時縮小效果 */
+}
+
+#fun {
+    width: 100%;
+    /* 每個區塊的內邊距 */
+    margin:0 auto;
+    /*圓角*/
+    border-radius: 0px;
+        /*底線*/
+    border-bottom: 5px solid rgb(15, 34, 209);
+}
+
+.fun-container {
+    width: 60%;
+    /* 每個區塊的內邊距 */
+    margin: 0 auto;
+    /* 每個區塊的外邊距 */
+    min-width: 650px;
+}
+
+#fun ul {
+    width: 100%;
+    list-style: none;
+    /* 移除 li 的點 */
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    
+
+}
+#fun li {
+    width: 45%;
+    /* 卡片佔滿整行 */
+    margin-bottom: 10px;
+    /* 卡片間距 */
+    justify-content: center;    
+    /* 讓卡片水平排列 */
+    min-width: 300px;
+
+
+}
+
+.card1 {
+    background-color: #8fac8463;
+    /* 卡片背景色 */
+    padding: 20px;
+    /* 卡片內邊距 */
+    border-radius: 10px;
+    /* 圓角 */
+    margin: 0 auto;
+    /* 卡片容器水平置中 */
+}
+
+.card2 {
+    background-color: #9adde7a6;
+    /* 卡片背景色 */
+    padding: 20px;
+    /* 卡片內邊距 */
+    border-radius: 10px;
+    /* 圓角 */
+    margin: 0 auto;
+    /* 卡片容器水平置中 */
+}
+
+.card1 h3 {
+    font-size: 35px;
+    background-color: rgba(255, 231, 196, 0.589);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 100%;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #124e00;
+    text-align: left;
+} 
+.card2 h3 {
+    font-size: 35px;
+    background-color: rgba(255, 231, 196, 0.589);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 100%;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #004585;
+    text-align: left;
+}
+
+.incard1, .incard2 {
+    width: 80%;
+    /* 或你想要的寬度 */
+    margin: 0 auto;;
+}
+
+
+
+
+
+#experience {
+    width: 100%;
+    display: flex;
+    /* 或 block + text-align: center */
+    border-bottom: #004585 solid 5px;
+}
+
+.experience-container {
+    width: 60%; /* 內容寬度為頁面的 50% */
+    margin: 10px auto ; /* 讓內容置中 */
+    text-align:left; /* 文字靠左對齊 */
+    color: #000000;
+}
+
+/* 自定義下拉選單按鈕樣式 */
+#experienceSelect {
+    width: 100px;
+    /* 設定按鈕寬度 */
+    height: 30px;
+    /* 設定按鈕高度 */
+    background-color: #ff8a75af;
+    /* 背景顏色 */
+    color: white;
+    /* 文字顏色 */
+    border: none;
+    /* 移除邊框 */
+    border-radius: 5px;
+    /* 圓角 */
+    font-size: 16px;
+    /* 字體大小 */
+    padding: 3px 8px;
+    /* 內距 */
+    cursor: pointer;
+    /* 滑鼠移上時顯示指標 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 增加陰影效果 */
+    transition: background-color 0.3s ease;
+    /* 背景顏色過渡效果 */
+}
+
+#experienceSelect:hover {
+    background-color: #da7961;
+    /* 滑鼠移上時的背景顏色 */
+}
+
+#experienceSelect:focus {
+    outline: none;
+    /* 移除聚焦時的外框 */
+    background-color: #da7961;
+    /* 聚焦時的背景顏色 */
+}
+
+
+#contact {
+    width: 100%;
+    /* 每個區塊的內邊距 */
+    margin:0 auto;
+    /* 每個區塊的外邊距 */
+    border-radius: 0px;
+    /* 區塊圓角 */
+    border-bottom: #5f4100 solid 5px;
+    /* 底線 */
+
+}
+.contact-container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* 彈出視窗背景 */
+.popup {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 彈出視窗內容 */
+.popup-content {
+    background: rgb(255, 195, 139);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    /* 設定彈出視窗寬度 */
+    height: auto;
+    /* 自動調整高度 */
+    animation: popup-animation 0.3s ease; /* 彈出動畫 */
+}
+
+/* 彈出動畫 */
+@keyframes popup-animation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+/* 從透明開始 */
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 彈出視窗內的圖片 */
+.popup-content img {
+    width: 100%; /* 圖片寬度填滿容器 */
+    height: auto; /* 保持圖片比例 */
+    border-radius: 5px; /* 圖片圓角 */
+}
+
+/* 關閉按鈕 */
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+/* ========== 響應式設計 ========== */
+
+/* 手機 (小於 600px) */
+@media (max-width: 600px) {
+
+    /* header：標題和頭像上下排列 */
+    .header-content {
+        flex-direction: column;
+        /* 改成直向 */
+        text-align: center;
+        /* 文字置中 */
+    }
+
+    .header-txt {
+        font-size: 40px;
+        /* 縮小字體 */
+        letter-spacing: 5px;
+        /* 減少字間距避免溢出 */
+        white-space: normal;
+        /* 允許換行，避免超出螢幕 */
+    }
+
+    .header-img {
+        width: 150px;
+        /* 手機頭像縮小 */
+        height: 150px;
+    }
+
+    nav .container1 {
+        width: 100%;
+        /* 導覽列展開 */
+        flex-wrap: wrap;
+        /* 讓超出的選項自動換行 */
+        justify-content: center;
+        /* 導覽列置中 */
+    }
+
+    main.container2 {
+        width: 100%;
+        padding: 0px;
+        /* 內距縮小，避免邊界擠壓 */
+    }
+
+    .about-h-p {
+        width: 90%;
+        /* 內容區塊放寬，適合小螢幕 */
+    }
+
+    #fun li {
+        width: 90%;
+        /* 卡片比較適合滿版 */
+        min-width: 0;
+        /* ✅ 同樣避免固定最小寬度 */
+        margin: 0 auto 15px auto;
+    }
+    
+    .fun-container {
+        width: 90%;
+        min-width: 0;
+    }
+    
+    .fun-container ul {
+        display: flex;
+        flex-direction: column;
+        /* 預設手機單欄 */
+        gap: 15px;
+        /* 卡片間距 */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        }
+    
+    /* 卡片：手機單欄 */
+    .card1,
+    .card2 {
+        width: 90%;
+    }
+
+    .experience-container,
+    .contact-container {
+        width: 90%;
+        /* 主要內容容器縮小 */
+    }
+}
+
+
+/*
+@media (min-width: 601px) and (max-width: 1024px) {
+    .header-txt {
+        font-size: 60px;
+        letter-spacing: 10px;
+    }
+
+    .header-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .fun-container,
+    .experience-container,
+    .contact-container {
+        width: 80%;
+    }
+
+    .card1,
+    .card2 {
+        width: 45%;
+    }
+}
+*/
