@@ -526,7 +526,7 @@ h2{
     }
 
     nav .container1 {
-        width: 90%;
+        width: 100%;
         /* 導覽列展開 */
         flex-wrap: wrap;
         /* 讓超出的選項自動換行 */
@@ -536,7 +536,7 @@ h2{
 
     main.container2 {
         width: 100%;
-        padding: 10px;
+        padding: 0px;
         /* 內距縮小，避免邊界擠壓 */
     }
 
@@ -545,29 +545,35 @@ h2{
         /* 內容區塊放寬，適合小螢幕 */
     }
 
-    #fun li{
-        width: 100%;
-        /* 卡片佔滿整行 */
-        margin-bottom: 10px;
-        /* 卡片間距 */
+    #fun li {
+        width: 90%;
+        /* 卡片比較適合滿版 */
+        min-width: 0;
+        /* ✅ 同樣避免固定最小寬度 */
+        margin: 0 auto 15px auto;
     }
-
+    
     .fun-container {
         width: 90%;
+        min-width: 0;
     }
-    .fun-container ul{
-
+    
+    .fun-container ul {
         display: flex;
-        /* 啟用 Flex */
         flex-direction: column;
-        /* 改成直向排列 */
-        margin-bottom: 15px;
-    }
+        /* 預設手機單欄 */
+        gap: 15px;
+        /* 卡片間距 */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        }
+    
     /* 卡片：手機單欄 */
     .card1,
     .card2 {
-        width: 100%;
-        }
+        width: 90%;
+    }
 
     .experience-container,
     .contact-container {
@@ -576,11 +582,11 @@ h2{
     }
 }
 
-/* 平板 (601px ~ 1024px) */
+
+/*
 @media (min-width: 601px) and (max-width: 1024px) {
     .header-txt {
         font-size: 60px;
-        /* 平板字體大小適中 */
         letter-spacing: 10px;
     }
 
@@ -593,13 +599,11 @@ h2{
     .experience-container,
     .contact-container {
         width: 80%;
-        /* 平板內容稍微放寬 */
     }
 
-    /* 卡片：平板雙欄 */
     .card1,
     .card2 {
         width: 45%;
     }
 }
-
+*/
