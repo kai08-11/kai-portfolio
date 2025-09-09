@@ -582,6 +582,14 @@ h2{
     }
 }
 
+@media (max-width: 800px) {
+    .header-content {
+        flex-direction: column;
+        /* 改成直向 */
+        text-align: center;
+        /* 文字置中 */
+    }
+
 
 /*
 @media (min-width: 601px) and (max-width: 1024px) {
