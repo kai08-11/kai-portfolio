@@ -36,7 +36,7 @@ header {
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
-    border-bottom: 5px solid rgb(255, 255, 255); /* 底線 */
+    border-bottom: 5px solid rgb(255, 204, 138);
 }
 
 header::before {
@@ -136,7 +136,7 @@ nav a {
     font-size: 18px;
     margin-right: 1rem;
     text-decoration: none;
-    color: hsl(143, 26%, 53%);
+    color: hsl(143, 100%, 16%);
     opacity: 0.85;
     transition: 0.3s;
     font-weight: 500;
@@ -186,7 +186,7 @@ main.container2 #about {
     flex-direction: column;
     /* 如果有多個元素垂直排列 */
     /*底線*/
-    border-bottom: 5px solid rgb(17, 0, 255);
+    border-bottom: 5px solid rgb(255, 204, 138);
     
 }
 .about-h-p {
@@ -280,7 +280,7 @@ h2{
     /*圓角*/
     border-radius: 0px;
         /*底線*/
-    border-bottom: 5px solid rgb(15, 34, 209);
+    border-bottom: 5px solid rgb(255, 204, 138);
 }
 
 .fun-container {
@@ -373,7 +373,7 @@ h2{
     width: 100%;
     display: flex;
     /* 或 block + text-align: center */
-    border-bottom: #004585 solid 5px;
+    border-bottom: 5px solid rgb(255, 204, 138);
 }
 
 .experience-container {

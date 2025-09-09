@@ -9,13 +9,13 @@ greetBtn.addEventListener("click", () => {
 
     if (count > 10) {
         // 第31次以後顯示爆表訊息
-        greetMsg.textContent = "❤️❤️爆表了!❤️❤️";
+        greetMsg.textContent = "🤚謝謝!🤚爆表了!🤚";
         greetMsg.style.color = "white"; // 設定文字顏色為白色
     } else {
         // 計算要顯示多少個❤️（每10次循環一次）
         let hearts = count % 10;
         if (hearts === 0) hearts = 10; // 第10、20、30次顯示10個
-        greetMsg.textContent = "❤️".repeat(hearts);
+        greetMsg.textContent = "👋".repeat(hearts);
     }
 
     console.log(`按下次數: ${count}, 顯示文字: ${greetMsg.textContent}`);
